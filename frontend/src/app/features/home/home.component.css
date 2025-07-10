@@ -1,0 +1,53 @@
+.home-image {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.image-overlay {
+  background-color: rgba(255,255,255,.5);
+  /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2); */
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #111827;
+  /* Add other text styles as needed */
+}
+
+.overlay-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #fff;
+  /* Add other text styles as needed */
+}
+
+.zoom-img {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.zoom-img  img {
+  width: 100%;
+  transition: all .7s ease-in-out;
+}
+
+.zoom-img img:hover   {
+  transform: scale(1.2);
+}
