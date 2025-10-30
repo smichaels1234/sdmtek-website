@@ -1,0 +1,191 @@
+/* Navigation Styles */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fb923c, #ea580c);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.active-link {
+  color: #fb923c !important;
+}
+
+.active-link::before {
+  width: 100%;
+}
+
+/* Mobile Navigation */
+.mobile-nav-link {
+  transition: all 0.2s ease;
+}
+
+.mobile-active-link {
+  color: #fb923c !important;
+  background-color: rgba(55, 65, 81, 0.8) !important;
+}
+
+/* Dropdown Animation */
+.animate-fadeInDown {
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rotate animation for dropdown arrow */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Scroll Effect */
+.nav-scrolled {
+  background-color: rgba(17, 24, 39, 0.98);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Hover effects for CTA button */
+.cta-button {
+  background: linear-gradient(45deg, #ea580c, #dc2626);
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.4);
+}
+
+/* Logo hover effect */
+.logo-hover {
+  transition: transform 0.3s ease;
+}
+
+.logo-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Service dropdown items */
+.service-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.service-dropdown-item:hover {
+  background-color: rgba(251, 146, 60, 0.1);
+  transform: translateX(4px);
+}
+
+/* Active state for router links */
+.router-link-active {
+  color: #ea580c !important;
+  position: relative;
+}
+
+.router-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ea580c, #dc2626);
+}
+
+/* Glassmorphism effect */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Focus states for accessibility */
+.nav-link:focus,
+.mobile-nav-link:focus,
+button:focus {
+  outline: 2px solid #ea580c;
+  outline-offset: 2px;
+}
+
+/* Button hover animations */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #ea580c, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,12 @@
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\backend.exe
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\appsettings.Development.json
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\appsettings.json
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\backend.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\backend.deps.json
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\backend.runtimeconfig.json
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\backend.pdb
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\Microsoft.OpenApi.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net9.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
