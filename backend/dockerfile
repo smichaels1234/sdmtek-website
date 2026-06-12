@@ -1,29 +1,21 @@
 # syntax=docker/dockerfile:1
-FROM ://microsoft.com AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-# Install Node.js for Angular build
-RUN curl -fsSL https://nodesource.com | bash - \
-    && apt-get install -y nodejs
-
-# Copy everything and restore
+# Copy project and restore dependencies
 COPY . .
-RUN dotnet restore "backend/backend.csproj"
+RUN dotnet restore ./backend.csproj
 
-# Build Angular and copy into .NET's wwwroot
-WORKDIR /src/frontend
-RUN npm install
-RUN npm run build --configuration production
+# Publish the app
+RUN dotnet publish ./backend.csproj -c Release -o /app/publish
 
-# Build the .NET App
-WORKDIR /src/backend
-RUN dotnet publish "backend.csproj" -c Release -o /app/out
-
-# Generate runtime image
-FROM ://microsoft.com
+# Runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=build /app/publish .
 
-# Railway dynamically assigns the port via the PORT environment variable
-ENV ASPNETCORE_URLS=http://*:${PORT}
+# Railway provides PORT at runtime
+ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT}
+EXPOSE 8080
+
 ENTRYPOINT ["dotnet", "backend.dll"]

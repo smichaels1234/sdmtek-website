@@ -170,3 +170,5 @@ C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Release\net10.0\compressed\p
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Release\net10.0\compressed\wc3tf5uvz2-{0}-cprx52dtbs-cprx52dtbs.gz
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Release\net10.0\compressed\477l7zou2p-{0}-iuv52nhfso-iuv52nhfso.gz
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Release\net10.0\compressed\v74ns7cci0-{0}-1hyyzp7ou6-1hyyzp7ou6.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net10.0\Npgsql.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\bin\Release\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

@@ -63,6 +63,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/health", () => Results.Ok("ok"));
 
 // Fallback to index.html for Angular routing
 app.MapFallbackToFile("index.html");
