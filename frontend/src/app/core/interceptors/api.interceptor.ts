@@ -1,11 +1,15 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 
-const BACK_END_URL = 'https://localhost:7096/api';
+const API_PREFIX = '/api';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => 
 {
+  if (/^https?:\/\//i.test(req.url)) {
+    return next(req);
+  }
+
   const apiReq = req.clone({
-    url: `${BACK_END_URL}${req.url}`
+    url: `${API_PREFIX}${req.url}`
   });
   return next(apiReq);
 };

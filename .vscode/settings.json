@@ -1,1 +1,4 @@
-{}
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/eaac3b75-9aeb-45a8-a606-24457fe0be62/resourceGroups/SDMTek/providers/Microsoft.Web/sites/sdmtek",
+    "appService.deploySubpath": "backend"
+}

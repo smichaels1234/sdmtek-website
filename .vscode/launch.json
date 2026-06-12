@@ -1,46 +1,57 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": ".NET Core Launch (web)",
-        "type": "coreclr",
-        "request": "launch",
-        "preLaunchTask": "build",
-        "program": "${workspaceFolder}/backend/bin/Debug/net9.0/backend.dll",
-        "args": [],
-        "cwd": "${workspaceFolder}/backend",
-        "stopAtEntry": false,
-        "serverReadyAction": {
-          "action": "openExternally",
-          "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
-          "uriFormat": "%s/swagger/index.html"
-        },
-        "env": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
-        },
-        "sourceFileMap": {
-          "/Views": "${workspaceFolder}/Views"
-        }
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/backend/bin/Debug/net10.0/backend.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/backend",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger/index.html"
       },
-      {
-        "name": "Angular (NG Serve)",
-        "type": "node",
-        "request": "launch",
-        "runtimeExecutable": "npx",
-        "runtimeArgs": ["ng", "serve"],
-        "cwd": "${workspaceFolder}/frontend",
-        "console": "integratedTerminal",
-        "sourceMaps": true,
-        "restart": true
+      "pipeTransport": {
+          "pipeCwd": "${workspaceFolder}",
+          "pipeProgram": "C:/Program Files/Git/bin/bash.exe",
+          "pipeArgs": [
+              "-c"
+          ],
+          "debuggerPath": "C:/netcoredbg-win64/netcoredbg/netcoredbg.exe",
+          "quoteArgs": true
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7114;http://localhost:5059",
+        "ASPNETCORE_LAUNCH_PROFILE": "https"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
       }
-    ],
-    "compounds": [
-      {
-        "name": "Launch Web API and Angular",
-        "configurations": [".NET Core Launch (web)", "Angular (NG Serve)"]
-      }
-    ]
-  }
+    },
+    {
+      "name": "Angular (NG Serve)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["ng", "serve"],
+      "cwd": "${workspaceFolder}/frontend",
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "restart": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Web API and Angular",
+      "configurations": [".NET Core Launch (web)", "Angular (NG Serve)"]
+    }
+  ]
+}

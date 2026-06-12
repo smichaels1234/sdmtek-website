@@ -1,0 +1,9 @@
+footer {
+  background-color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background-color: #111827 !important;
+  }
+}

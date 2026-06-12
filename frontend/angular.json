@@ -24,7 +24,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/favicon.ico",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"
@@ -57,6 +60,7 @@
         },
         "serve": {
           "options": {
+            "proxyConfig": "proxy.config.json",
             "port": 4202
           },
           "builder": "@angular/build:dev-server",

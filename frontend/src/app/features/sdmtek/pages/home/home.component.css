@@ -62,7 +62,7 @@
 
 .hero-content {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -75,7 +75,7 @@
 /* Mobile First Responsive Design */
 @media (max-width: 479px) {
   .hero-content {
-    top: 60%;
+    top: 50%;
     width: 95%;
     padding: 0.75rem;
   }
@@ -83,7 +83,7 @@
 
 @media (min-width: 480px) {
   .hero-content {
-    top: 57%;
+    top: 50%;
     width: 90%;
     padding: 1rem;
   }
@@ -309,6 +309,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+}
+
+.service-section:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .service-image-container {
@@ -615,16 +625,9 @@ button:hover {
     }
     
     .service-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
         padding: 1.5rem;
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
         height: 100%;
+        text-align: center;
     }
     
     .service-image-container {
@@ -649,21 +652,9 @@ button:hover {
     }
     
     .service-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
         padding: 2rem;
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
         height: 100%;
-    }
-    
-    .service-section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
     
     .service-image-container {
