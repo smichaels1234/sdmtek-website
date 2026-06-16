@@ -142,9 +142,15 @@ export class ContactComponent {
       error: (error) => {
         console.error('Error submitting contact:', error);
         this.submitting = false;
+
+        const serverMessage = typeof error?.error === 'string'
+          ? error.error
+          : error?.error?.detail || error?.error?.title || null;
+
         this.submitError = error?.status === 0
           ? 'Unable to reach the server. Please check your connection and try again.'
-          : 'Something went wrong while sending your message. Please try again.';
+          : (serverMessage || 'Something went wrong while sending your message. Please try again.');
+
         submitButton.classList.remove('loading');
         submitButton.disabled = false;
         window.grecaptcha?.reset();
