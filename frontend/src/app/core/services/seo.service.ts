@@ -20,7 +20,7 @@ interface RouteSeoData {
 })
 export class SeoService {
   private readonly siteUrl = 'https://www.sdmtek.com';
-  private readonly defaultImage = `${this.siteUrl}/SDMTek.jpg`;
+  private readonly defaultImage = `${this.siteUrl}/SDMTech.jpg`;
   private readonly defaultPageData: PageSeoData = {
     title: 'SDMTek - Expert Software Engineering & Digital Marketing Solutions',
     description: 'Transform your business with SDMTek\'s expert software engineering and digital marketing services. 500+ successful projects, 15+ years experience. Custom web development, mobile apps, SEO, and cloud solutions.',

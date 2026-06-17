@@ -125,6 +125,6 @@ export class NavComponent implements OnInit {
   }
 
   goToProductsPage() {
-    window.location.href = 'http://localhost:4200';
+    this.router.navigate(['/products']);
   }
 }
