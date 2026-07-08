@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactsService } from '../../services/contacts.service';
 import { Contact } from '../../models/contacts';
@@ -6,9 +6,12 @@ import { Contact } from '../../models/contacts';
 declare global {
   interface Window {
     grecaptcha?: {
-      getResponse: () => string;
-      reset: () => void;
+      ready: (cb: () => void) => void;
+      render: (container: HTMLElement, parameters: { sitekey: string }) => number;
+      getResponse: (widgetId?: number) => string;
+      reset: (widgetId?: number) => void;
     };
+    onRecaptchaLoad?: () => void;
   }
 }
 
@@ -18,8 +21,11 @@ declare global {
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, AfterViewInit {
+  @ViewChild('recaptchaContainer') recaptchaContainer?: ElementRef<HTMLDivElement>;
+
   captchaSiteKey = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+  private recaptchaWidgetId: number | null = null;
 
   submitting = false;
   submitSuccess = false;
@@ -30,6 +36,11 @@ export class ContactComponent {
   ngOnInit() {
     this.loadRecaptchaScript();
     this.getAllContacts();
+  }
+
+  ngAfterViewInit() {
+    // In case the script is already loaded, render immediately.
+    this.renderRecaptcha();
   }
 
   getAllContacts() {
@@ -45,16 +56,37 @@ export class ContactComponent {
 
   private loadRecaptchaScript() {
     const scriptId = 'google-recaptcha-script';
+
+    window.onRecaptchaLoad = () => {
+      this.renderRecaptcha();
+    };
+
     if (document.getElementById(scriptId)) {
+      this.renderRecaptcha();
       return;
     }
 
     const script = document.createElement('script');
     script.id = scriptId;
-    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
+  }
+
+  private renderRecaptcha() {
+    const container = this.recaptchaContainer?.nativeElement;
+    if (!container || !window.grecaptcha || this.recaptchaWidgetId !== null) {
+      return;
+    }
+
+    window.grecaptcha.ready(() => {
+      if (this.recaptchaWidgetId === null) {
+        this.recaptchaWidgetId = window.grecaptcha!.render(container, {
+          sitekey: this.captchaSiteKey
+        });
+      }
+    });
   }
 
   scrollToForm() {
@@ -91,7 +123,7 @@ export class ContactComponent {
     // Get form data
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    const captchaToken = window.grecaptcha?.getResponse() || (formData.get('g-recaptcha-response') as string) || '';
+    const captchaToken = window.grecaptcha?.getResponse(this.recaptchaWidgetId ?? undefined) || (formData.get('g-recaptcha-response') as string) || '';
     
     // Get submit button
     const submitButton = form.querySelector('.submit-button') as HTMLButtonElement;
@@ -136,7 +168,7 @@ export class ContactComponent {
         submitButton.classList.remove('loading');
         submitButton.disabled = false;
         form.reset();
-        window.grecaptcha?.reset();
+        window.grecaptcha?.reset(this.recaptchaWidgetId ?? undefined);
         setTimeout(() => { this.submitSuccess = false; }, 8000);
       },
       error: (error) => {
@@ -153,7 +185,7 @@ export class ContactComponent {
 
         submitButton.classList.remove('loading');
         submitButton.disabled = false;
-        window.grecaptcha?.reset();
+        window.grecaptcha?.reset(this.recaptchaWidgetId ?? undefined);
       }
     });
   }

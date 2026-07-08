@@ -49,7 +49,8 @@
 /* Story Section */
 .story-image img {
   width: 100%;
-  height: auto;
+  height: 360px;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -242,6 +243,10 @@
   .foundation-card,
   .team-card {
     padding: 24px;
+  }
+
+  .story-image img {
+    height: 260px;
   }
   
   .image-container {
