@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ContactsService } from '../../services/contacts.service';
 import { Contact } from '../../models/contacts';
 
@@ -17,7 +17,7 @@ declare global {
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })

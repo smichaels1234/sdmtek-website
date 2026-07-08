@@ -1,7 +1,7 @@
 <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-50 top-0 transition-all duration-300 border-b border-gray-700">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      
+
       <!-- Logo Section -->
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="flex items-center space-x-3 group">
@@ -11,81 +11,83 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
-        <a routerLink="/" 
-           routerLinkActive="active-link" 
-           [routerLinkActiveOptions]="{exact: true}"
-           class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200 relative">
+        <a routerLink="/"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200 relative">
           Home
         </a>
-        
+
         <!-- Services Dropdown -->
         <div class="relative">
-          <button (click)="toggleServicesDropdown()" 
-                  class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center space-x-1">
+          <button (click)="toggleServicesDropdown()"
+            class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center space-x-1">
             <span>Services</span>
-            <svg class="w-4 h-4 transition-transform duration-200" 
-                 [class.rotate-180]="isServicesDropdownOpen" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transition-transform duration-200"
+              [class.rotate-180]="isServicesDropdownOpen"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          
+
           <!-- Dropdown Menu -->
-          <div *ngIf="isServicesDropdownOpen" 
-               class="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 animate-fadeInDown z-50">
-            <div class="py-2">
-              <a routerLink="/services" 
-                 (click)="closeServicesDropdown()"
-                 class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
-                <div class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  <div>
-                    <div class="font-medium">All Services</div>
-                    <div class="text-xs text-gray-500">Complete service overview</div>
+          @if (isServicesDropdownOpen) {
+            <div
+              class="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 animate-fadeInDown z-50">
+              <div class="py-2">
+                <a routerLink="/services"
+                  (click)="closeServicesDropdown()"
+                  class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
+                  <div class="flex items-center space-x-3">
+                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                      <div class="font-medium">All Services</div>
+                      <div class="text-xs text-gray-500">Complete service overview</div>
+                    </div>
                   </div>
-                </div>
-              </a>
-              <a href="#" 
-                 (click)="closeServicesDropdown()"
-                 class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
-                <div class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                  </svg>
-                  <div>
-                    <div class="font-medium">Web Development</div>
-                    <div class="text-xs text-gray-500">Custom websites & apps</div>
+                </a>
+                <a href="#"
+                  (click)="closeServicesDropdown()"
+                  class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
+                  <div class="flex items-center space-x-3">
+                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <div>
+                      <div class="font-medium">Web Development</div>
+                      <div class="text-xs text-gray-500">Custom websites & apps</div>
+                    </div>
                   </div>
-                </div>
-              </a>
-              <a href="#" 
-                 (click)="closeServicesDropdown()"
-                 class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
-                <div class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  <div>
-                    <div class="font-medium">Digital Marketing</div>
-                    <div class="text-xs text-gray-500">SEO, PPC & social media</div>
+                </a>
+                <a href="#"
+                  (click)="closeServicesDropdown()"
+                  class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
+                  <div class="flex items-center space-x-3">
+                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <div>
+                      <div class="font-medium">Digital Marketing</div>
+                      <div class="text-xs text-gray-500">SEO, PPC & social media</div>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
-          </div>
+          }
         </div>
 
-        <a routerLink="/about" 
-           routerLinkActive="active-link"
-           class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200">
+        <a routerLink="/about"
+          routerLinkActive="active-link"
+          class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200">
           About
         </a>
-        
-        <a routerLink="/contact" 
-           routerLinkActive="active-link"
-           class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200">
+
+        <a routerLink="/contact"
+          routerLinkActive="active-link"
+          class="nav-link text-gray-300 hover:text-orange-400 px-3 py-2 text-sm font-medium transition-colors duration-200">
           Contact
         </a>
       </div>
@@ -93,8 +95,8 @@
       <!-- CTA Button & Mobile Menu -->
       <div class="flex items-center space-x-4">
         <!-- CTA Button -->
-        <a routerLink="/contact" 
-           class="hidden sm:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-medium rounded-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <a routerLink="/contact"
+          class="hidden sm:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-medium rounded-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
           <span>Get Started</span>
           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -102,10 +104,10 @@
         </a>
 
         <!-- Mobile Menu Button -->
-        <button type="button" 
-                (click)="toggleMobileMenu()"
-                class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-orange-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors duration-200"
-                id="mobile-menu-button">
+        <button type="button"
+          (click)="toggleMobileMenu()"
+          class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-orange-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors duration-200"
+          id="mobile-menu-button">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -117,24 +119,24 @@
     <!-- Mobile Menu -->
     <div class="lg:hidden hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900 border-t border-gray-700">
-        <a routerLink="/" 
-           routerLinkActive="mobile-active-link" 
-           [routerLinkActiveOptions]="{exact: true}"
-           class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
+        <a routerLink="/"
+          routerLinkActive="mobile-active-link"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
           Home
         </a>
-        
+
         <!-- Mobile Services -->
         <div class="space-y-1">
           <button (click)="toggleMobileServicesDropdown()"
-                  class="mobile-nav-link w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200"
-                  id="mobile-services-button">
+            class="mobile-nav-link w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200"
+            id="mobile-services-button">
             <span>Services</span>
             <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          
+
           <div class="hidden ml-4 space-y-1" id="mobile-services-dropdown">
             <a routerLink="/services" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
               All Services
@@ -147,23 +149,23 @@
             </a>
           </div>
         </div>
-        
-        <a routerLink="/about" 
-           routerLinkActive="mobile-active-link"
-           class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
+
+        <a routerLink="/about"
+          routerLinkActive="mobile-active-link"
+          class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
           About
         </a>
-        
-        <a routerLink="/contact" 
-           routerLinkActive="mobile-active-link"
-           class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
+
+        <a routerLink="/contact"
+          routerLinkActive="mobile-active-link"
+          class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-300 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
           Contact
         </a>
-        
+
         <!-- Mobile CTA -->
         <div class="pt-4 border-t border-gray-700">
-          <a routerLink="/contact" 
-             class="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-medium rounded-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300">
+          <a routerLink="/contact"
+            class="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-medium rounded-lg hover:from-orange-700 hover:to-orange-800 transition-all duration-300">
             <span>Get Started</span>
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

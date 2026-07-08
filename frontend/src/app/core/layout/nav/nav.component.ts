@@ -1,14 +1,13 @@
 import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-nav',
   imports: [
-    RouterModule,
-    CommonModule
-  ],
+    RouterModule
+],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
