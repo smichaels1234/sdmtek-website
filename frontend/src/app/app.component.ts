@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { NavComponent } from "./core/layout/nav/nav.component";
@@ -9,6 +9,7 @@ import { SeoService } from './core/services/seo.service';
   selector: 'app-root',
   imports: [RouterOutlet, NavComponent, FooterComponent],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.css'
 })
 export class AppComponent {

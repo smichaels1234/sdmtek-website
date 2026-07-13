@@ -189,3 +189,79 @@ button:focus {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Orbiting octagons around logo */
+.logo-motion-wrap {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+  pointer-events: none;
+}
+
+.logo-main-image {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-core-ring {
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.22);
+}
+
+.logo-orbit-track {
+  position: absolute;
+  inset: 0;
+  animation: logoOrbitSpin 9s linear infinite;
+}
+
+.orbit-octagon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: linear-gradient(135deg, #fb923c, #ea580c);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+  transform-origin: center;
+  animation: logoOrbitCounterSpin 9s linear infinite;
+}
+
+.octagon-1 { transform: rotate(0deg) translateX(1.4rem) rotate(0deg); }
+.octagon-2 { transform: rotate(60deg) translateX(1.4rem) rotate(-60deg); }
+.octagon-3 { transform: rotate(120deg) translateX(1.4rem) rotate(-120deg); }
+.octagon-4 { transform: rotate(180deg) translateX(1.4rem) rotate(-180deg); }
+.octagon-5 { transform: rotate(240deg) translateX(1.4rem) rotate(-240deg); }
+.octagon-6 { transform: rotate(300deg) translateX(1.4rem) rotate(-300deg); }
+
+@keyframes logoOrbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logoOrbitCounterSpin {
+  from {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.18);
+  }
+  to {
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-orbit-track,
+  .orbit-octagon {
+    animation: none;
+  }
+}

@@ -5,7 +5,18 @@
       <!-- Logo Section -->
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="flex items-center space-x-3 group">
-          <img src="SDMTek.png" class="h-12 me-3" alt="SDMTek Logo">
+          <div class="logo-motion-wrap" aria-hidden="true">
+            <div class="logo-orbit-track">
+              <span class="orbit-octagon octagon-1"></span>
+              <span class="orbit-octagon octagon-2"></span>
+              <span class="orbit-octagon octagon-3"></span>
+              <span class="orbit-octagon octagon-4"></span>
+              <span class="orbit-octagon octagon-5"></span>
+              <span class="orbit-octagon octagon-6"></span>
+            </div>
+            <div class="logo-core-ring"></div>
+          </div>
+          <img src="SDMTek.png" class="h-12 me-3 logo-main-image" alt="SDMTek Logo">
         </a>
       </div>
 
@@ -48,7 +59,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="#"
+                <a routerLink="/web-development"
                   (click)="closeServicesDropdown()"
                   class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
                   <div class="flex items-center space-x-3">
@@ -61,7 +72,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="#"
+                <a routerLink="/digital-marketing"
                   (click)="closeServicesDropdown()"
                   class="block px-4 py-3 text-sm text-gray-300 hover:bg-gray-700 hover:text-orange-400 transition-colors duration-200">
                   <div class="flex items-center space-x-3">
@@ -141,10 +152,10 @@
             <a routerLink="/services" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
               All Services
             </a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
+            <a routerLink="/web-development" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
               Web Development
             </a>
-            <a href="#" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
+            <a routerLink="/digital-marketing" class="block px-3 py-2 text-sm text-gray-400 hover:text-orange-400 hover:bg-gray-800 rounded-md transition-colors duration-200">
               Digital Marketing
             </a>
           </div>

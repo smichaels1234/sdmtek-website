@@ -164,3 +164,12 @@ C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\refint\backend
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\backend.pdb
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\backend.genruntimeconfig.cache
 C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\ref\backend.dll
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\zcfryercnh-{0}-3wmbt1wv56-3wmbt1wv56.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\5hfpuxohsx-{0}-tvy3j3n584-tvy3j3n584.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\a33b2n2aoy-{0}-8avcni72z4-8avcni72z4.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\pcllgev4l3-{0}-44zqyzp4lf-44zqyzp4lf.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\qu0d1homfl-{0}-g5cbmfd4ij-g5cbmfd4ij.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\jpwo5f529t-{0}-vxe8ix43nr-vxe8ix43nr.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\477l7zou2p-{0}-iuv52nhfso-iuv52nhfso.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\v74ns7cci0-{0}-1hyyzp7ou6-1hyyzp7ou6.gz
+C:\Users\smich\Documents\vscode\SDMTech\backend\obj\Debug\net10.0\compressed\touhlvu43u-{0}-57hxonq06h-57hxonq06h.gz

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
 ],
   templateUrl: './nav.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {

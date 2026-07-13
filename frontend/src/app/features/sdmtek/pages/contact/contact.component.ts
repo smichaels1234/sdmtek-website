@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { ContactsService } from '../../services/contacts.service';
 import { Contact } from '../../models/contacts';
@@ -19,6 +19,7 @@ declare global {
   selector: 'app-contact',
   imports: [],
   templateUrl: './contact.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit, AfterViewInit {
@@ -35,23 +36,11 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.loadRecaptchaScript();
-    this.getAllContacts();
   }
 
   ngAfterViewInit() {
     // In case the script is already loaded, render immediately.
     this.renderRecaptcha();
-  }
-
-  getAllContacts() {
-    this.contactsService.getAllContacts().subscribe({
-      next: (contacts: Contact[]) => {
-        console.log('Retrieved contacts:', contacts);
-      },
-      error: (error) => {
-        console.error('Error retrieving contacts:', error);
-      }
-    });
   }
 
   private loadRecaptchaScript() {
